@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "My blogs";
+
+
+}
+
+<div class="container">
+    <div class="row text-center">
+        <h1 class="display-4 ">My Blogs</h1>
+    </div>
+    @foreach (BlogSpot.Models.BlogModel b in Model)
+    {
+<div class="row">
+    <div class="col-10 mx-auto my-3">
+
+        <div class="col-12">
+            <h1  style="height: 50px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis; ">@b.Title</h1>
+        </div>
+        <div class="col-12">
+            <h4 class="text-muted font-weight-light" style="height: 50px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis; ">@b.Content</h4>
+        </div>
+        <div class="col-12">
+            <div class="col-4">@b.PublicationDate</div>
+            <div class="col-4">@b.AuthorName</div>
+        </div>
+    </div>
+</div>
+    }
+</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

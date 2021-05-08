@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model UserModel
+
+
+<h1 class="display-4 text-center my-3">Welcome to BlogSpot</h1>
+<div class="row my-5">
+    <div class="col-8 bg-white p-3 offset-1 ">
+        <h1 class="text-center">Register Now</h1>
+        <form asp-action="SignUp" asp-controller="Home" method="post" class="mx-3">
+            <div class="row my-3">
+                <div class="col ">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="DateOfBrith" class="form-label"></label>
+                    <input asp-for="DateOfBrith" class="form-control">
+                    <span class="text-danger" asp-validation-for="DateOfBrith"></span>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col ">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="Gender" class="form-label"></label> <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="male" asp-for="Gender">
+                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="female" asp-for="Gender">
+                        <label class="form-check-label" for="inlineRadio1">Female</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="other" asp-for="Gender">
+                        <label class="form-check-label" for="inlineRadio1">Other</label>
+                    </div>
+                    <span class="text-danger" asp-validation-for="Gender"></span>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col ">
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" class="form-control">
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="ConfirmPassword" class="form-label"></label>
+                    <input asp-for="ConfirmPassword" class="form-control">
+                    <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Register Now</button>
+        </form>
+    </div>
+    <div class="col-3 bg-white p-3">
+        <h4 class="mb-3 mt-4">Have an account?</h4>
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Home">LogIn Now</a>
+        <h5 class="mt-3">And Live in the world of Blogs.</h5>
+
+    </div>
+</div>

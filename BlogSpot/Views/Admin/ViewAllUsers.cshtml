@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Users";
+}
+
+<div class="container">
+    <div class="row">
+        <h1 class="display-4">All User</h1>
+    </div>
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">User_ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Emails</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(BlogSpot.Models.UserModel u in Model)
+                {
+
+                    <tr>
+                        <th scope="row">@u.UserID</th>
+                        <td>@u.Name</td>
+                        <td>@u.Email</td>
+                        <td>@u.DateOfBrith.Date</td>
+                        <td>@u.Gender</td>
+                        <td>
+                            <a class="btn btn-danger ml-2 " href="/Admin/DeleteUser?id=@u.UserID">Delete</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
